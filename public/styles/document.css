@@ -33,6 +33,10 @@
     color: var(--text-paragraph-color);
 }
 
+#content {
+    overflow-x: auto;
+}
+
 #content > span {
     display: block;
     line-height: 1.5rem;
