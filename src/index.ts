@@ -4,6 +4,7 @@ import {PublicApiEndpoint} from "./utils/types";
 import {Config} from "./utils/config";
 import {FileStorage} from "./storage/file";
 import {MysqlStorage} from "./storage/mysql";
+import fs from "fs";
 
 const app = express()
 export const storage = Config.storage.file ? new FileStorage() : new MysqlStorage();
@@ -49,6 +50,15 @@ readdir("./dist/paths/public")
 app.get("/", (req,res) => res.sendFile(process.cwd() + "/public/index.html"));
 
 app.listen(Config.server.port)
+
+for (let name in Config.documents) {
+    const data = fs.readFileSync(Config.documents[name], 'utf8');
+    if (data) {
+        storage.set(name, data).catch(error => console.error("Failed to set document: ", error))
+    } else {
+        console.error("Failed to read document: ", name)
+    }
+}
 
 console.log(`Listening on port: http://localhost:${Config.server.port}`)
 
