@@ -1,0 +1,78 @@
+.content {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+
+    display: grid;
+
+    padding: 20px;
+
+    grid-template-rows: 100px auto;
+    grid-template-columns: 100%;
+
+    row-gap: 20px;
+}
+
+.content > div {
+    background-color: var(--container-color);
+    border-radius: var(--card-radius);
+}
+
+.text > pre {
+    display: flex;
+    padding: 10px;
+    background-color: var(--accent-color);
+    font-size: 16px;
+
+    border-radius: var(--medium-button-radius);
+
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+
+    margin: 20px;
+
+    color: var(--text-paragraph-color);
+}
+
+#content > span {
+    display: block;
+    line-height: 1.5rem;
+    counter-increment: line;
+}
+
+#content > span:before {
+    content: counter(line);
+    display: inline-block;
+    padding: 0 .5em;
+    margin-right: .5em;
+    color: var(--text-paragraph-color);
+    border-right: var(--highlight-color) 2px solid;
+    width: 40px;
+    text-align: right;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info > * {
+    padding: 0;
+    margin: 0;
+}
+
+.buttons {
+    margin-top: 5px;
+}
+
+.buttons > a {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    background-color: var(--button-color);
+    border-radius: var(--small-button-radius);
+}
+
+.buttons > a:hover {
+    cursor: pointer;
+    background-color: var(--button-hover-color);
+}

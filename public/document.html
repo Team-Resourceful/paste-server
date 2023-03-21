@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        document.head.appendChild(document.createElement("base")).href = `${location.protocol}//${location.host}`;
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Resourceful - Document</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/document.css">
+    <link rel="stylesheet" href="styles/github-dark-dimmed.css">
+    <link rel="stylesheet" href="styles/message.css">
+    <script src="scripts/highlight.min.js"></script>
+<body>
+<dialog id="message-box"></dialog>
+<div class="content">
+    <div class="info">
+        <h2 id="doc-id">Loading...</h2>
+        <div class="buttons">
+            <a href="/" title="New File">
+                <img src="assets/lucide/clipboard-edit.svg" alt="New File"/>
+            </a>
+            <a id="copy-to-clipboard" title="Copy To Clipboard">
+                <img src="assets/lucide/copy.svg" alt="Copy To Clipboard"/>
+            </a>
+            <a data-local href="/raw" title="View Raw">
+                <img src="assets/lucide/file-code.svg" alt="View Raw"/>
+            </a>
+        </div>
+    </div>
+    <div class="text">
+        <pre><code id="content"></code></pre>
+    </div>
+</div>
+</body>
+<script src="scripts/utils.js"></script>
+<script src="scripts/message.js"></script>
+<script src="scripts/document.js"></script>
+<script src="scripts/no-base.js"></script>
+</html>

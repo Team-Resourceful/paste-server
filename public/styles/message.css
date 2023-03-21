@@ -1,0 +1,27 @@
+#message-box {
+    width: 200px;
+    border: none;
+    outline: none;
+
+    background-color: var(--accent-color);
+    border-radius: var(--medium-button-radius);
+
+    color: var(--text-title-color);
+
+    padding: 10px;
+    text-align: center;
+
+    margin-top: 20px;
+
+    animation: show 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show {
+    80% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0
+    }
+}
