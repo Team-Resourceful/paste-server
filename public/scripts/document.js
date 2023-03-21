@@ -27,3 +27,9 @@ fetch(`${location.protocol}//${location.host}/api/v1/public/documents/${document
     .catch(error => {
         console.error(error);
     });
+
+document.querySelectorAll("a[data-local]")
+    .forEach(a => {
+        const ref = a.getAttribute("href");
+        a.href = `${window.location.href.substring(0, window.location.href.lastIndexOf("."))}${ref}`
+    });
