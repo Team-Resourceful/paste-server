@@ -38,12 +38,12 @@
 }
 
 .hljs-ln-numbers {
-    padding-right: 20px !important;
+    padding-right: 10px !important;
     text-align: right;
 }
 .hljs-ln-n {
-    border-right: var(--highlight-color);
-    padding-right: 2px;
+    border-right: var(--highlight-color) 2px solid;
+    padding-right: 10px;
 }
 
 .info {
