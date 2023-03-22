@@ -9,6 +9,11 @@ export class MysqlStorage extends Storage {
     constructor() {
         super();
         this.database = new Database(Config.database);
+        this.database.connect()
+            .catch(() => {
+                console.error('Failed to connect to database.');
+                process.exit(1);
+            });
     }
 
     public override set(key: string, data: string, skipExpire: boolean = false): Promise<void> {
