@@ -32,5 +32,5 @@ fetch(`${location.protocol}//${location.host}/api/v1/public/documents/${document
 document.querySelectorAll("a[data-local]")
     .forEach(a => {
         const ref = a.getAttribute("href");
-        a.href = `${location.protocol}//${location.host}/document/${documentId}/${ref}`
+        a.href = `${location.protocol}//${location.host}/document/${documentId}${ref}`
     });
