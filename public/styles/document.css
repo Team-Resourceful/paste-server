@@ -40,7 +40,7 @@
 .hljs-ln-numbers {
     padding-right: 15px !important;
     border-right: var(--highlight-color) solid 2px;
-    margin-right: 3px;
+    margin-right: 3px !important;
     text-align: right;
 }
 
