@@ -10,15 +10,16 @@ fetch(`${location.protocol}//${location.host}/api/v1/public/documents/${document
         const extension = highlight ? EXTENSIONS[highlight] || highlight : "txt";
         try {
             if (extension === 'txt') {
-                content.innerHTML = htmlEscape(json.data).split("\n").map(line => `<span>${line}</span>`).join("");
+                content.innerHTML = htmlEscape(json.data);
             } else if (extension) {
                 content.innerHTML = hljs.highlight(json.data, {
                     language: extension
-                }).value.split("\n").map(line => `<span>${line}</span>`).join("");
+                }).value;
             }
         } catch (err) {
-            content.innerHTML = hljs.highlightAuto(json.data).value.split("\n").map(line => `<span>${line}</span>`).join("");
+            content.innerHTML = hljs.highlightAuto(json.data).value;
         }
+        hljs.lineNumbersBlock(content);
         document.getElementById("copy-to-clipboard").addEventListener("click", () => {
             navigator.clipboard.writeText(json.data);
             showMessage("Copied to clipboard");
